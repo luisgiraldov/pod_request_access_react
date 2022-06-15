@@ -5,6 +5,7 @@ import spotify from './assets/desktop/spotify.svg';
 import apple from './assets/desktop/apple-podcast.svg';
 import google from './assets/desktop/google-podcasts.svg';
 import pocket from './assets/desktop/pocket-casts.svg';
+import bgPatternDots from './assets/desktop/bg-pattern-dots.svg';
 import { emailValidator } from './helper_functions';
 
 /***
@@ -52,14 +53,13 @@ function App() {
           <img src={pocket} alt="pocket-logo" />
         </div>
         <form action='/' onSubmit={handleSubmit}>
-          {/* <div className="request-access-container"> */}
             <input type="text" id="emailField" name="emailField" placeholder="Email address"/>
+            <input type="submit" value="Request Access" id="emailBtnSubmit"></input>
             {errorMessage && <div className="error"> {errorMessage} </div>}
             {successMessage && <div className="success"> {successMessage} </div>}
-            <input type="submit" value="Request Access" id="emailBtnSubmit"></input>
-          {/* </div> */}
         </form>
       </div>
+      <img src={bgPatternDots} alt="pattern dots" id="bg-pattern-dots" />
     </div>
   );
 }

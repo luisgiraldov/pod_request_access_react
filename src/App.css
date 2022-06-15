@@ -20,6 +20,7 @@ html,
   display: grid;
   justify-items: center;
   align-items: center;
+  grid-template-columns: 1fr;
 }
 
 .img-bg {
@@ -41,16 +42,22 @@ html,
   margin-top: 32px;
 }
 
-.main-content {
+.main-content,
+.title,
+.podcasts-logos,
+#emailBtnSubmit {
   text-align: center;
+}
+
+.main-content {
   height: 100%;
+  font-weight: 300;
 }
 
 .title {
   font-weight: 300;
   font-size: 26px;
   line-height: 38px;
-  text-align: center;
   text-transform: uppercase;
   color: #FFFFFF;
 }
@@ -60,14 +67,12 @@ html,
 }
 
 .content {
-  font-weight: 300;
   line-height: 28px;
   color: #C2CBE5;
   padding: .5rem 2rem;
 }
 
 .podcasts-logos {
-  text-align: center;
   padding: .5rem 1rem;
 }
 
@@ -77,11 +82,17 @@ html,
 }
 
 #emailField,
+#emailBtnSubmit,
+.succes,
+.error {
+  font-weight: 700;
+}
+
+#emailField,
 #emailBtnSubmit {
   width: 85%;
   height: 46px;
   display: block;
-  font-weight: 700;
   border-radius: 28px;
   margin: 1rem auto;
 }
@@ -97,13 +108,7 @@ html,
   color: #121725;
   background-color: #54E6AF;
   border: 1px #54E6AF solid;
-  text-align: center;
   padding: 0 1rem;
-}
-
-.success,
-.error {
-  font-weight: 700;
 }
 
 .success {
@@ -112,6 +117,10 @@ html,
 
 .error {
   color: #D8000C;
+}
+
+#bg-pattern-dots {
+  display: none;
 }
 
 /* ================================= 
@@ -137,18 +146,26 @@ html,
 
     .main-container {
       justify-items: start;
-      align-items: start;
+      align-items: end;
       margin: 0 39px;
     }
 
     .header {
       margin-top: 60px;
+      align-self: start;
     }
 
     .main-content {
+      max-height: 80%;
+      display: grid;
       background-color: #121725;
       width: 90%;
       font-size: 1.3rem;
+      grid-template-rows: 1fr 1fr .5fr 1fr;
+      grid-template-areas: "title"
+                           "content"
+                           "form"
+                           "podcasts-logos";
     }
 
     .title {
@@ -169,15 +186,18 @@ html,
 
     .podcasts-logos {
       padding: 0;
+      grid-area: podcasts-logos;
+      align-self: center;
     }
 
     .podcasts-logos img {
       height: 28px;
-      margin: 0 20px 0 0;
+      margin: 0 25px 0 0;
     }
 
     form {
       position: relative;
+      grid-area: form;
     }
 
     #emailField,
@@ -198,5 +218,17 @@ html,
       z-index: 2;
       top: 5px;
       margin-left: -26%;
+    }
+
+    .success,
+    .error {
+      padding-left: 2rem;
+    }
+
+    #bg-pattern-dots {
+      display: block;
+      width: 232px;
+      height: 104px;
+      margin-left: -9px;
     }
 }
