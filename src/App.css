@@ -7,7 +7,7 @@ body {
   min-height: 100%;
   font-family: 'Chivo', sans-serif;
   font-style: normal;
-  background-color: black;
+  background-color: #121725;
 }
 
 html, 
@@ -72,13 +72,13 @@ html,
 }
 
 .podcasts-logos img {
-  height: 18px;
-  margin: 10px;
+  height: 16px;
+  margin-right: 10px;
 }
 
 #emailField,
 #emailBtnSubmit {
-  width: 80%;
+  width: 85%;
   height: 46px;
   display: block;
   font-weight: 700;
@@ -114,3 +114,89 @@ html,
   color: #D8000C;
 }
 
+/* ================================= 
+  Media Queries
+==================================== */
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .img-bg {
+      width: 491px;
+      height: 767px;
+      right: 0px;
+      top: 0px;
+      background: url("./assets/desktop/image-host.jpg") no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      z-index: -100;
+    }
+
+    .main-container {
+      justify-items: start;
+      align-items: start;
+      margin: 0 39px;
+    }
+
+    .header {
+      margin-top: 60px;
+    }
+
+    .main-content {
+      background-color: #121725;
+      width: 90%;
+      font-size: 1.3rem;
+    }
+
+    .title {
+      font-size: 3rem;
+      line-height: 58px;
+    }
+
+    .content {
+      padding: 1rem 0;
+      width: 70%;
+    }
+
+    .main-content,
+    .title, 
+    .podcasts-logos {
+      text-align: start;
+    }
+
+    .podcasts-logos {
+      padding: 0;
+    }
+
+    .podcasts-logos img {
+      height: 28px;
+      margin: 0 20px 0 0;
+    }
+
+    form {
+      position: relative;
+    }
+
+    #emailField,
+    #emailBtnSubmit {
+      /* margin: 2rem 0; */
+      display: inline-block;
+    }
+
+    #emailField {
+      height: 56px;
+      width: 70%;
+      padding-right: 27%;
+    }
+
+    #emailBtnSubmit {
+      width: 25%;
+      position: absolute;
+      z-index: 2;
+      top: 5px;
+      margin-left: -26%;
+    }
+}

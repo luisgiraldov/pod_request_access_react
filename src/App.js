@@ -52,10 +52,12 @@ function App() {
           <img src={pocket} alt="pocket-logo" />
         </div>
         <form action='/' onSubmit={handleSubmit}>
-          <input type="text" id="emailField" name="emailField" placeholder="Email address"/>
-          {errorMessage && <div className="error"> {errorMessage} </div>}
-          {successMessage && <div className="success"> {successMessage} </div>}
-          <input type="submit" value="Request Access" id="emailBtnSubmit"></input>
+          {/* <div className="request-access-container"> */}
+            <input type="text" id="emailField" name="emailField" placeholder="Email address"/>
+            {errorMessage && <div className="error"> {errorMessage} </div>}
+            {successMessage && <div className="success"> {successMessage} </div>}
+            <input type="submit" value="Request Access" id="emailBtnSubmit"></input>
+          {/* </div> */}
         </form>
       </div>
     </div>
